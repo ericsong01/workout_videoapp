@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/create.css') }}">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+              </ul>
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="/search">Search</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/createworkout">Create</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/logout">Logout</a>
+                </li>
+              </ul>
+            </div>
+        </nav>
+
+        <section id="create-workout">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xl-6">
+                        <div class="workout-image">
+                            <img src="/static/img/exercise2.svg" alt="woman exercising" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-xl-6">
+                        <form action="/" method="GET">
+                            <section id="input-workout">
+                                <h4>Schedule a workout</h4>
+                                <div class="form-group workout-name">
+                                    <label for="workout-name-field">Workout name</label>
+                                    <input autocomplete="off" autofocus class="form-control" name="workoutname" id="workout-name-field" type="text" required>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="start-time-input">Start time</label>
+                                        <input type="datetime-local" class="form-control" id="start-time-input" required>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="end-time-input">End time</label>
+                                        <input type="datetime-local" class="form-control" id="end-time-input" required>
+                                    </div>
+                                </div>
+                            </section>
+                            <section id="add-exercises">
+                                <div class="header-button">
+                                    <h4>Add exercises</h4>
+                                    <button class="btn" id="add-button" type="button"><i class="fa fa-plus"></i></button>
+                                </div>
+                                <div class="form-row input-row">
+                                    <div class="form-group col-md-5">
+                                        <label for="exercise-name1">Exercise name</label>
+                                        <input type="text" class="form-control" id="exercise-name1" required>
+                                    </div>
+                                    <div class="form-group col-md-2">
+                                        <label for="sets1" id="setslabel1">Sets</label>
+                                        <input type="number" class="form-control" min="0" id="sets1" value='0' oninput="validity.valid||(value='0')">
+                                    </div>
+                                    <div class="form-group col-md-2">
+                                        <label for="reps1" id="repslabel1">Reps</label>
+                                        <input type="number" class="form-control" min="0" id="reps1" value='0' oninput="validity.valid||(value='0')">
+                                    </div>
+                                    <div class="form-group col-md-3">
+                                        <label for="exercise-type1">Type</label>
+                                        <select class="exercise-type form-control" id="exercise-type1">
+                                            <option selected value="Sets">Sets</option>
+                                            <option value="Time">Time</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </section>
+                            <div class="create-workout-button">
+                                <button class="btn btn-primary create-button" type="submit" id="create-button">Create Workout</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script src="//media.twiliocdn.com/sdk/js/video/releases/2.3.0/twilio-video.min.js"></script>
+        <script src="{{ url_for('static', filename='js/create.js') }}"></script>
+    </body>
+</html>

@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/index.css') }}">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+              </ul>
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="/search">Search</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/createworkout">Create</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/logout">Logout</a>
+                </li>
+              </ul>
+            </div>
+        </nav>
+
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-xl-6">
+              <section id="workout-list">
+                <h2>Scheduled Workouts</h2>
+                <!-- Start the for loop  -->
+                {% for workout in workouts %}
+                <div class="workout-box">
+                  <!-- Put the two headers in a separate div that's inline block -->
+                  <form action="/joinworkout" method="GET" >
+                    <div class="block">
+                      <div class="title-text">{{workout["name"]}}</div>
+                      <div class="date-text">{{workout["start_time"]}}</div>
+                    </div>
+                    <input type="text" style="display: none" name="workout_name" value="{{workout['name']}}">
+                    <button name="workout_id" class="btn button primary-button text-uppercase" type="submit" id = "{{ workout['w_id'] }}" value = "{{ workout['w_id'] }}" onclick='handleJoinButtonClick(event)'>Join</button>
+                  </form>
+                </div>
+                {% endfor %}
+                <!-- End the for loop  -->
+              </section>
+            </div>
+            <div class="col-xl-6 friends-panel">
+              <div class="row">
+                <div class="col-xl-6">
+                  <section id="friend-request">
+                    <h4>Friend Requests</h4>
+                    <!-- Start for loop  -->
+                    {%for request in requests %}
+                    <div class="friend-block">
+                      <form action="/acceptrequest" method="POST" class="accept-request">
+                        <button class="btn button" type="submit" name="friendrequest" value="{{  request['user_id'] }}"><i class="fa fa-check-circle-o"></i>{{ request['username'] }}</button>
+                      </form>
+                    </div>
+                    {% endfor %}
+                    <!-- End for loop -->
+                  </section>
+                </div>
+                <div class="col-xl-6">
+                  <section id="friend-list">
+                    <h4>Friends</h4>
+                    <div class="list">
+                      <ul>
+                        {% for friend in friends %} 
+                        <li class="friend-name">{{friend}}</li>
+                        {% endfor %}
+                      </ul>
+                    </div>
+                  </section>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <script src="//media.twiliocdn.com/sdk/js/video/releases/2.3.0/twilio-video.min.js"></script>
+        <script>
+            function handleJoinButtonClick(event) {
+                // Store workout id for joinworkout page 
+                const w_id = event.target.id 
+                localStorage["w_id"] = w_id
+            }
+        </script>
+    </body>
+</html>

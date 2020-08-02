@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/login.css') }}">
+    </head>
+    <body>
+        {% if errorMessage %}
+        <div class="alert alert-danger" role="alert">
+            {{ errorMessage }} 
+        </div>
+        {% endif %}
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6">
+                    <div class="login-section">
+                        <h2>Welcome</h2>
+                        <h4>Register to Motivator</h4>
+                        <form class = "login-form" action="/register" method="post">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="username" placeholder="Username" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" name="password" placeholder="Password" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" name="password-confirmation" placeholder="Confirm password" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Register</button>
+                        </form>
+                        <div class="register">
+                            <a href="/login">Already have an account? <span>Log in</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 workout-image">
+                    <img src="/static/img/exercise3.svg" alt="treadmill" class="img-fluid">
+                </div>
+            </div>
+        </div>
+        <script src="//media.twiliocdn.com/sdk/js/video/releases/2.3.0/twilio-video.min.js"></script>
+        <script>
+
+        </script>
+    </body>
+</html>

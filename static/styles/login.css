@@ -1,0 +1,64 @@
+@font-face{
+    font-family: "Circular-std";
+    src: url('/static/fonts/circular-std-book-cufonfonts/CircularStd-Book.otf');
+}
+
+h2 {
+    font-family: "Circular-std";
+    font-size: 50px;
+    font-weight: 1000;
+}
+
+h4 {
+    font-family: "Circular-std";
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.container .row .login-section{
+    padding: 10rem 3.5rem;
+}
+
+.login-form {
+    margin-top: 1.5rem;
+    width: 80%;
+    text-align: center;
+}
+
+.login-form .form-group input {
+    font-family: "Circular-std";
+}
+
+.login-form .btn {
+    width: 100%;
+    font-family: "Circular-std";
+    background-color: #548AFF;
+    color: white; 
+}
+
+.login-section .register {
+    width: 75%;
+    margin-top: 2rem;
+    text-align: center;
+    color: black;
+}
+
+.login-section .register a {
+    font-family: "Circular-std";
+    color: black;
+}
+
+.login-section .register a:hover {
+    text-decoration: none;
+  }
+
+.login-section .register a span {
+    font-family: "Circular-std";
+    color: #548AFF;
+}
+
+.workout-image img {
+    padding: 7rem 3rem;
+    width: 40rem;
+}
+

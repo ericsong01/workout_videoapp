@@ -1,0 +1,245 @@
+@font-face{
+    font-family: "Circular-std";
+    src: url('/static/fonts/circular-std-book-cufonfonts/CircularStd-Book.otf');
+}
+
+/* Navigation bar  */
+#nav-bar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.navbar {
+    padding-top: 10px;
+}
+
+.navbar-nav li {
+    padding: 0 10px;
+}
+
+.navbar-nav li a {
+    float: right;
+    text-align: left;
+    font-family: "Circular-std";
+}
+
+.navbar {
+    background: #548AFF;
+}
+
+.navbar-toggler {
+    border: none!important;
+}
+
+.nav-link {
+    color: white!important;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+/* Workout List Section  */
+#workout-list {
+    margin: 2rem;
+    text-align: center;
+}
+
+#workout-list h2 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 1000;
+    font-family: "Circular-std";
+}
+
+#workout-list h2::after {
+    content: '';
+    background: black;
+    display: block;
+    height: 3px;
+    width: 70%;
+    margin: 10px auto 5px;
+}
+
+#workout-list .workout-box {
+    margin-top: 15px;
+    border: 1px solid #548AFF; 
+    border-radius: 5px;
+    height: 100px;
+    width: 70%;
+    display: inline-block;
+    text-align: left;
+}
+
+#workout-list .workout-box .block {
+    display: inline-block;
+    width: 65%;
+    float: left;
+}
+
+#workout-list .workout-box .title-text {
+    font-family: "Circular-std";
+    font-weight: 1000;
+    font-size: 20px;
+    white-space: nowrap;
+    margin-top: 12px;
+    margin-bottom: 10px;
+    padding: 0px 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+#workout-list .workout-box .date-text {
+    font-family: "Circular-std";
+    font-weight: 750;
+    font-size: 15px;
+    white-space: nowrap;
+    margin-bottom: 0px;
+    padding: 5px 10px;
+    text-overflow: ellipsis;
+}
+
+#workout-list .workout-box .button {
+    display: inline-block;
+    padding: .5rem 1rem;
+    margin: 30px 15px;
+    font: normal 16px/ 20px "Circular-std";
+    font-weight: 750;
+    width: 25%;
+    float: left; 
+    border: 0px solid #548AFF;
+    border-radius: 4px;
+    transition: transform .4s ease;
+}
+
+#workout-list .workout-box .button:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transform: scale(1.1);
+}
+
+
+.button.primary-button {
+    color: white; 
+    background: #548AFF;
+    background-clip: padding-box;
+}
+
+/* Friend request section  */
+.friends-panel {
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: #F5F5F5;
+}
+
+#friend-request {
+    margin: 2rem;
+    text-align: center;
+}
+
+#friend-request h4 {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 750;
+    font-family: "Circular-std";
+}
+
+#friend-request h4::after {
+    content: '';
+    background: black;
+    display: block;
+    height: 3px;
+    width: 70%;
+    margin: 10px auto 5px;
+}
+
+
+#friend-request .friend-block {
+    margin: 20px auto;
+    width: 80%;
+    /* border-bottom: 1px solid black; */
+}
+
+#friend-request .accept-request {
+    display: inline-block;
+    width: 100%;
+}
+
+#friend-request .button {
+    background-color: transparent;
+    border-style: hidden;
+    font-size: 15px;
+    font-family: "Circular-std";
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 90%;
+    line-height: 15px;
+    padding: 10px 10px; 
+    display: inline-flex;
+    align-items: center; 
+}
+
+#friend-request .button .fa-check-circle-o {
+    margin-right: 15px;
+    font-size: 30px;
+    color: #8FD284;
+}
+
+#friend-list {
+    margin: 2rem;
+    text-align: center;
+}
+
+#friend-list h4 {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 750;
+    font-family: "Circular-std";
+}
+
+#friend-list h4::after {
+    content: '';
+    background: black;
+    display: block;
+    height: 3px;
+    width: 50%;
+    margin: 10px auto 5px;
+}
+
+#friend-list .list {
+    margin: 20px auto;
+    width: 80%;
+}
+
+#friend-list .list ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+#friend-list .list .friend-name {
+    font-family: "Circular-std";
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+html {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+}
+
+.row {
+    height:100%;
+}
+
+.container-fluid {
+    height: 100%;
+    width: 100%;
+}
+
+

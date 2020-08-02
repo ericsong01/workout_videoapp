@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/joinworkout.css') }}">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+              </ul>
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="/search">Search</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/createworkout">Create</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/logout">Logout</a>
+                </li>
+              </ul>
+            </div>
+        </nav>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="video-chat">
+                        <h3>{{workout_name}}</h3>
+                        <form class="join-video-form">
+                            <div class="form-group name-input">
+                                <label for="username">Name</label>
+                                <input type="text" name="username" class="form-control" id="username">
+                            </div>
+                            <button class="btn button primary-button" id="join_leave">Join workout</button>
+                        </form>
+                        <p id="count"></p>
+                        <div id="container" class="container video-section">
+                            <div id="local" class="participant"><div id="local-video"></div>
+                            <div class="label">Me</div></div>
+                            <!-- more participants will be added dynamically here -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="workout-sheet">
+                        <h3>Workout sheet</h3>
+                        <div class="exercise-list">
+                            <div class="container-fluid">
+
+                                {% for exercise in exercises %}
+
+                                    {% if exercise["ex_type"] == 'Sets'%}
+                                        <!-- Use sets/reps template -->
+                                        <!-- Use index as parameter in button click event  -->
+                                        <div class="row exercise-group sets-reps" id="group{{loop.index}}">
+                                            <label class="name-label">{{exercise["ex_name"]}}</label>
+                                            <label class="reps-label">{{exercise["sets_min"]}} x {{exercise["reps_sec"]}} reps</label>
+                                            <div class="checkbox-section">
+                                                <div class="form-check">
+                                                    <label class="form-check-label" for="selector_{{loop.index}}" id="selector_label_{{loop.index}}" hidden>Done</label>
+                                                    <br>
+                                                    <input class="form-check-input position-static" type="checkbox" id="selector_{{loop.index}}" hidden onclick="selectedDone(event)">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% else %}
+                                        <!-- Use min/sec template -->
+                                        <!-- Start new panel -->
+                                        <!-- play_button id and time id should match - just be the order they were submitted in  -->
+                                    <div class="row exercise-group min-sec" id="group{{loop.index}}">
+                                        <label class="name-label">{{exercise["ex_name"]}}</label>
+                                        <label class="time-label" id="time_label_{{loop.index}}">{{exercise["sets_min"]}} min {{exercise["reps_sec"]}} sec</label>
+                                        <button class="play-btn" id="play_button_{{loop.index}}" onclick='handleTimerClick(event)' hidden><i class="fa fa-play" id="play_button_{{loop.index}}_icon"></i></button>
+                                    
+                                        <!-- <button class="btn" type="button"><img src="/static/img/right.svg" alt="checkmark"></button> -->
+                                    </div>
+                                    {% endif %}
+
+                                {% endfor %}
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="//media.twiliocdn.com/sdk/js/video/releases/2.3.0/twilio-video.min.js"></script>
+        <script src="{{ url_for('static', filename='js/joinworkout.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+    </body>
+</html>

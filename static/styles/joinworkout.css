@@ -1,0 +1,345 @@
+@font-face{
+    font-family: "Circular-std";
+    src: url('/static/fonts/circular-std-book-cufonfonts/CircularStd-Book.otf');
+}
+
+/* Navigation bar  */
+#nav-bar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.navbar {
+    padding-top: 10px;
+}
+
+.navbar-nav li {
+    padding: 0 10px;
+}
+
+.navbar-nav li a {
+    float: right;
+    text-align: left;
+    font-family: "Circular-std";
+}
+
+.navbar {
+    background: #548AFF;
+}
+
+.navbar-toggler {
+    border: none!important;
+}
+
+.nav-link {
+    color: white!important;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+/* End navbar */
+
+html {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+}
+
+.container-fluid {
+    height: 100%;
+    width: 100%;
+}
+
+.row {
+    height: 100%;
+}
+
+.video-chat {
+    margin-top: 2rem;
+    margin-left: 2rem;
+}
+
+.video-chat h3 {
+    font-family: "Circular-std";
+    font-size: 30px;
+    font-weight: bold;
+}
+
+
+.form-control {
+    border: solid 1px #548AFF;
+    border-radius: 5px;
+}
+
+.form-control:focus {
+    border-color: #548AFF;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+}
+
+.join-video-form {
+    margin-top: 2rem;
+}
+
+.video-chat label {
+    font-family: "Circular-std";
+    font-size: 15px;
+}
+
+input[type="text"]
+{
+    font-size:15px;
+    font-family: "Circular-std";
+}
+
+.name-input {
+    display: inline-block;
+    width: 30%;
+}
+
+.join-video-form .button {
+    display: inline-block;
+    padding: .5rem 1rem;
+    margin-left: 15px;
+    font: normal 16px/ 20px "Circular-std";
+    font-weight: 750;
+    width: 120px;
+    border: 0px solid #548AFF;
+    border-radius: 4px;
+}
+
+.join-video-form .button:hover {
+    background-color: #3071FF;
+}
+
+.join-video-form .button.primary-button {
+    color: white; 
+    background: #548AFF;
+    background-clip: padding-box;
+}
+
+.video-section .label {
+    margin-top: 5px;
+    font-size:15px;
+    font-family: "Circular-std";
+}
+
+#count {
+    font-size:15px;
+    font-family: "Circular-std";
+}
+
+.container {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.participant {
+    margin-bottom: 5px;
+    margin-right: 5px;
+}
+.participant div {
+    text-align: center;
+}
+.participant div:first-child {
+    width: 240px;
+    height: 180px;
+    background-color: white;
+    border: 1px solid #548AFF;
+}
+.participant video {
+    width: 100%;
+    height: 100%;
+}
+
+/* Workout Sheet */
+.container-fluid .col-md-5 {
+    background-color: #F9F9F9;
+}
+
+.workout-sheet {
+    margin-top: 2rem;
+    margin-left: 2rem;
+}
+
+.workout-sheet h3 {
+    font-family: "Circular-std";
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.exercise-list {
+    margin-top: 2rem;
+    width: 90%;
+}
+
+.workout-sheet .container-fluid {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.exercise-group {
+    background-color: white;
+    width: 100%;
+    height: 60px;
+    border: 1px solid #548AFF;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.3);
+    margin-top: 1rem;
+}
+
+/* For highlighting the current exercise  */
+/* .highlight-ex {
+    box-shadow: 5px 6px 15px 5px rgba(84, 134, 255, 0.5), 5px 6px 15px 5px rgba(84, 134, 255, 0.3);
+} */
+
+.highlight-ex {
+    box-shadow: 0px 0px 10px 8px rgba(84, 134, 255, 0.5);
+}
+
+.exercise-group .name-label {
+    display: inline-block;
+    width: 50%;
+    font-family: "Circular-std";
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 10px 0px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.exercise-group .reps-label {
+    font-family: "Circular-std";
+    font-size: 18px;
+    font-weight: lighter;
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 10px 0px;
+    width: 90px;
+}
+
+.exercise-group .time-label {
+    font-family: "Circular-std";
+    font-size: 18px;
+    font-weight: lighter;
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 10px 0px;
+    width: 110px;
+}
+
+.workout-sheet .exercise-list .exercise-group .checkbox-section {
+    display: inline;
+    margin-left: 15px;
+    text-align: left;
+    margin-top: 2px;
+}
+
+.checkbox-section .form-check {
+    text-align: center;
+}
+
+.form-check-label {
+    font-family: "Circular-std";
+    font-size: 15px;
+    display: inline-block;
+    width: 40px;
+    margin: 2px auto;
+    text-align: left;
+}
+
+.form-check-input {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 0 auto;
+    background-color: #548AFF;
+}
+
+.play-btn {
+    background-color:#548AFF; 
+    display: inline-block;
+    border: none; 
+    color: white; 
+    padding: 8px 13px; 
+    font-size: 15px; 
+    width: 40px;
+    height: 40px;
+    margin: auto 15px;
+    border-radius: 5px;
+    cursor: pointer; 
+  }
+  
+  .play-btn:hover {
+    background-color: #3071FF;
+  }
+
+  #local-video {
+      position: relative;
+  }
+
+  .buttonElements {
+    position:absolute;
+    width:120px;
+    height:50px;
+    top:130px;
+    left:55px;
+  }
+
+  .circle-button {
+    position: relative; 
+    background: rgba(78, 78, 78, 0.7);
+    color: white;
+    width: 20px;
+    height: 20px;
+    border: none;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50%;
+    vertical-align: middle;
+    padding: 20px;
+    margin-left: 18px;
+    margin-top: 1px;
+    cursor: pointer; 
+    float: left;
+  }
+
+button:focus {
+    outline: none; 
+}
+
+  .circle-button:hover {
+    background: rgba(37, 37, 37, 0.5);
+    color: rgb(180, 180, 180);
+  }
+
+  .icon {
+    position: absolute;
+    top: 51%;
+    left: 48%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    width: 16px;
+    height: 16px;
+}
+
+
+
+
+
+
