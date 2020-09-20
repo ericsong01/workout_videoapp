@@ -1,9 +1,20 @@
-# workout_videoapp
-cs50 final project - video app for group workouts
+# Motivator Workout Web Application
+For Harvard's CS50 final project, I created a web application to facilitate virtual group workouts. 
 
+<img src="https://github.com/ericsong01/workout_videoapp/blob/master/github_gifs/joiningroom.gif" width="1000"/>
 
+# Features 
+* Schedule and Join virtual workouts
+* Share exercises with friends and track your progress 
+* Typical video chat features (Mute/unmute video and mic)
 
-<h3>Workout CS50 Project</h3>
-This project uses Flask and SQLite3. 
+<img src="https://github.com/ericsong01/workout_videoapp/blob/master/github_gifs/createworkout2.gif" width="450" align="left"/><img src="https://github.com/ericsong01/workout_videoapp/blob/master/github_gifs/configworkout2.gif" width="450"/>
+
+# Tech Stack
+* Flask
+* SQLite3
+* Twilio Video API
+* HTML/CSS/JavaScript/Python
+
 
 
