@@ -1,5 +1,5 @@
 # Motivator Workout Web Application
-For Harvard's CS50 final project, I created a web application to facilitate virtual group workouts. 
+Web application to facilitate virtual group workouts. 
 
 <img src="https://github.com/ericsong01/workout_videoapp/blob/master/github_gifs/joiningroom.gif" width="1000"/>
 
